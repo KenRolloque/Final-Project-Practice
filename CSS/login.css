@@ -1,0 +1,262 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --main_color :#15BC8A;
+    --red_color :#B81212;
+    --white_color :white;
+    --grey_color : rgb(129, 129, 129);;
+    --border_color: rgb(176, 176, 176);
+}
+
+
+body{
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 100vh;
+    overflow: hidden;
+ 
+}
+
+
+#left-section{
+    grid-area: 1/1/2/2;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#left-section > h2{
+    align-self: flex-start;
+    margin-left: 3.2em;
+    font: bold 26px Inter;
+    color: var(--main_color);
+
+}
+#left-section > img{
+    width: 80%;
+    height: auto;
+}
+
+
+
+
+
+
+
+ #login-form{
+    width: 50vw;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: 1/2/2/3;
+    font-family: Inter;
+    gap: 4em;
+}
+
+.welcome-back{
+    display: none;
+}
+.smart-door-lock{
+    display: none;
+}
+
+#login-form > h3{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4em;
+    color: var(--main_color);
+    font: bold 40px Inter;
+}
+
+
+
+#login-form > h3 > p{
+    font: bold 14px Roboto;
+    color: var(--grey_color);
+
+}
+
+
+
+form{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: Inter;
+    gap: 2em;
+
+    
+}
+
+
+.input_icons i{
+    position: absolute;
+
+}
+
+.input_icons{
+        display: inline-flex;
+        align-items: center;
+        width: 65%;
+        height: 3.7em;
+        padding: 1em;     
+      
+}
+
+.icon{
+    padding: 10px;
+    text-align: center;
+    margin-left: 1.2em;
+    color: var(--main_color);
+}
+
+
+
+ input[type=text], input[type=password]{
+    border: 2px solid var(--main_color);
+    width: 100%;
+    padding: 1.4em 4em;
+}
+
+
+
+
+
+
+
+#lines {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    gap: 3em;
+
+}
+
+#lines > span{
+    display: inline-flex;
+    height: 2px;
+    width: 27%;
+    background-color: var(--border_color);
+}
+
+input[type=submit]{
+    background-color: var(--main_color);
+    border-width: 0;
+    /* padding: 1.3em 15em; */
+    padding: 1.3em;
+    width:60%;
+    border-radius: 5px;
+    font: bold 14px Inter;
+    color: white;
+}
+
+input[type=submit]:hover{
+    cursor: pointer;
+}
+
+
+
+.invalid-result{
+    display: none;
+    color: var(--red_color);
+    font: bold 12px Inter;
+}
+
+
+
+
+/*MOBILE PHONE*/
+@media only screen and (max-width:500px ){
+
+
+    body{
+        grid-template-columns: 100vw;
+        grid-template-rows: 100vh;
+    }
+
+    #login-form{
+        width: 100vw;
+        grid-area: 1/1/2/2;
+        border: 1px solid red;
+    }
+
+    #left-section{
+        display: none;
+    }
+
+    #login-form > h3{
+        display: none;
+    }
+    
+    #login-form > h3 > p{
+    display:none;
+    }
+
+
+    .welcome-back{
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--grey_color);
+        font-size: 16px;
+        gap: .5em;
+    }
+    .smart-door-lock{
+        display: inline-flex;
+        
+        color: var(--main_color);
+        font-size: 25px;
+    }
+
+    .input_icons{
+        height: 3em;
+        width: 90%;
+    }
+
+    input[type=text], input[type=password]{
+        width: 100%;
+        padding: 1.2em 4em;
+        font-size: 12px;
+    }
+
+    input[type=submit]{
+        font-size: 14px;
+        padding: 1em 11em;
+    }
+
+
+/*
+
+    .input_icons{
+        display: inline-flex;
+        align-items: center;
+        width: 65%;
+        height: 3.7em;
+        padding: 1em;     
+      
+    }
+
+    .icon{
+        padding: 10px;
+        text-align: center;
+        margin-left: 1.2em;
+        color: var(--main_color);
+    }
+
+
+
+    input[type=text], input[type=password]{
+        border: 2px solid var(--main_color);
+        width: 100%;
+        padding: 1.4em 4em;
+    }
+*/
+}
