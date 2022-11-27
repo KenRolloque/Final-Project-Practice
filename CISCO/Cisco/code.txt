@@ -1,0 +1,166 @@
+var url ="http://127.0.0.1/web/PHP/API.php";
+var post_status = "http://127.0.0.1/web/CISCO/cisco/door_api.php";
+
+
+
+var piezo = 1;
+var motion_sensor = 0;
+
+var button = 3;
+var door = 2;
+
+	var count = 0;
+function getTime(){
+     	var dateISO = new Date().toISOString();
+		var data = dateISO.split('T')[0]; 
+		
+		var z = new Date();
+		var time= z.getHours() +":"+z.getMinutes()+":"+z.getSeconds();
+		return [data,time];
+		
+}
+
+function setup() {
+
+		
+		pinMode(piezo , OUTPUT);
+		pinMode(motion_sensor, INPUT);
+		
+		pinMode (button,INPUT);
+		pinMode(door, OUTPUT);
+}
+
+function motion_Function(){
+	
+	var status = digitalRead(motion_sensor);
+	var i = 0 ;
+	
+	if (status == HIGH){
+
+
+
+		sendDate();
+		while (i < 10){
+			digitalWrite(piezo, HIGH);
+			i++;
+			delay(6000);
+
+		}
+		
+	}else{
+		
+		digitalWrite(piezo, LOW);
+	}
+	
+}
+
+
+function sendDate(){
+	
+	var fetch_data = getTime();
+		
+	var x = fetch_data[0];
+	var y = fetch_data[1];
+	
+	console.log(x);
+	console.log(y);
+	
+	var send = {
+		
+		'name':1001,
+		'date':x,
+		'time':y
+		
+	};
+	
+  	RealHTTPClient.post(url, send);
+  	
+  	
+}
+
+
+function door_status(data){
+		
+	
+	var fetch_date = getTime();
+	
+	var d_date = fetch_date[0];
+	var d_time = fetch_date[1];
+	var d_status = data;
+	
+
+	var status_data = {
+		'status':d_status,
+		'date':d_date,
+		'time':d_time,
+		
+	};
+
+	console.log(status_data.status);
+	console.log(status_data.date);
+	console.log(status_data.time);	
+	
+	RealHTTPClient.post(post_status, status_data);
+	
+	
+}
+
+function sendDoor_status(){
+	var lock ="";
+
+	var curr_status = customRead(door);
+	var butt_status = digitalRead(button);
+
+	if (butt_status == HIGH){
+		
+		
+		customWrite(2,"0,0"); 
+		lock = "Locked";
+		
+		if (count === 0){
+			
+		door_status(lock);
+		
+			count =1;
+		}
+
+		
+	}else{
+		
+		customWrite(2,"1,0");
+		lock = "Unlocked";
+		
+		
+		if (count === 1){
+			
+		door_status(lock);
+		
+			count = 0;
+		}
+	
+
+	}
+
+}
+
+
+function control_door(){
+
+	var check = FileSystem.exists('status.txt');
+	
+	console.log(check);
+	
+//	var read_data = FileSystem.open("/status.txt",File.READ);
+	
+//	read_data.name();
+	
+	
+}
+
+function loop(){
+	control_door();
+	//sendDoor_status();
+	//motion_Function();
+	delay(1);
+	
+}
