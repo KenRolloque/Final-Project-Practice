@@ -1,0 +1,113 @@
+
+:root{
+    --main_color :#198754;
+    --red_color :#B81212;
+    --white_color :white;
+    --grey_color :rgb(129, 129, 129);;
+}
+
+
+.card{
+   margin-top: 3em;
+
+    box-shadow: 11px 15px 14px -5px rgba(0,0,0,0.43);
+    -webkit-box-shadow: 11px 15px 14px -5px rgba(0,0,0,0.43);
+    -moz-box-shadow: 11px 15px 14px -5px rgba(0,0,0,0.43);
+}
+.card-header{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+    background: rgb(36,0,0);
+    background: linear-gradient(66deg, rgba(36,0,0,1) 0%, rgba(30,172,87,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+.house-name{
+    font: bold 16px Poppins;
+    margin-top: 1em;
+
+}
+.card-body > div{
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.card-body > div >div{
+    width: 80%;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1em;   
+  
+}
+
+
+.card-body > div > div > span{
+    display: inline-flex;
+    gap: 1em;
+}
+
+i{
+    color:var(--main_color) ;
+}
+
+.fa-user{
+    padding-left: 0.3em;
+}
+
+.fa-home{
+    padding-left: 0.2em;
+}
+#home {
+    color: var(--main_color);
+}
+
+.material-icons{
+    font-size: 20px;
+}
+
+
+
+#channel_but{
+    border-radius: 5px;
+    margin-top: 1em;
+    color: white;
+    font: normal 12px Poppins;
+    padding: 1em;
+    border-width: 0;
+    align-self: center;
+    width: 40%;
+    background-color: var(--main_color);
+}
+
+#card-b{
+    display: none;
+}
+
+#card-b > span{
+    font:bold 14px Poppins;
+    display: inline-flex;
+}
+
+#card-b > span > p{
+    font:normal 14px Poppins;
+    display: inline-flex;
+    color: var(--grey_color);
+}
+
+.l2_name{
+    font: normal 14px Poppins;
+    color: var(--grey_color);
+}
+
+#card-b > span{
+    font:bold 14px Poppins;
+    display: inline-flex;
+}
+
+#card-b> span > p{
+    font:normal 14px Poppins;
+    display: inline-flex;
+    color: var(--grey_color);
+}
