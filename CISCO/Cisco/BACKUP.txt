@@ -1,0 +1,60 @@
+// MANUAL LOCKING AND UNLOCKING OF DOOR
+function sendDoor_status(){
+	var lock ="";
+
+	var curr_status = customRead(door);
+	var butt_status = digitalRead(button);
+
+	if (butt_status == HIGH){
+		
+		
+		customWrite(2,"1,0"); 
+		lock = "Unlocked";
+		
+		if (count === 0){
+			
+		//door_status(lock);
+	//	RealHTTPClient.post(post_status, status_data);	
+		RealHTTPClient.post(open_door, 1);
+			count =1;
+		}
+
+		
+	}else{
+		
+		customWrite(2,"0,0");
+		lock = "Locked";
+		
+		
+		if (count === 1){
+			
+		//door_status(lock);
+		RealHTTPClient.post(close_door, 0);
+			count = 0;
+		}
+	
+
+	}
+
+/*
+function control_door(){
+	
+	RealHTTPClient.get(door_get_status, function (data,status){
+		
+		
+		var r_status = status;
+		var r_data = data;
+		
+		if (r_status == "0" ){
+			
+			
+			 customWrite(door,"0,0");
+			 // close door
+			 
+			 
+		}else{
+			customWrite(door,"1,0");
+			//open door
+		}})
+		
+}*/
