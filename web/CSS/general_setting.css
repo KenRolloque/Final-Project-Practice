@@ -1,0 +1,239 @@
+ :root{
+    --main_color :#15BC8A;
+    --red_color :#B81212;
+    --white_color :white;
+    --grey_color : rgb(129, 129, 129);;
+    --border_color: rgb(176, 176, 176);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    background-color: #FBFBFB;
+}
+
+.container{
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    margin-left: 7em;
+}
+
+.setting-container{
+
+    display: inline-flex;
+    flex-direction:column;
+    font-family: Roboto;
+    width: 40%;
+    max-width: 90%;
+    min-width: 40%;
+    height: auto;
+    padding: 2em 2em 0em 2em;
+    background-color: white;
+    align-items: center;
+    box-shadow: 9px 5px 18px 0px rgba(112,112,112,0.82);
+    -webkit-box-shadow: 9px 5px 18px 0px rgba(112,112,112,0.82);
+    -moz-box-shadow: 9px 5px 18px 0px rgba(112,112,112,0.82);
+}
+
+.setting-container >span >span{
+   display: inline-flex;
+   gap: 2em;
+   width: 100%;
+
+}
+
+.setting-container >span >input{
+  
+   width: 100%;
+}
+
+.setting-container >h1{
+
+    color: var(--grey_color);
+    margin-bottom:15%;
+}
+
+ i{
+    color: var(--main_color);
+    
+
+ }
+ .fa-user, .fa-home, .fa-lock{
+
+    font-size: 22px;
+
+
+ }
+
+ .fa-user{
+    padding: .5em .18em;
+ }
+ .fa-home {
+    padding: .5em .09em;   
+ }
+
+ .fa-lock{
+    padding: 0 .22em;      
+ }
+
+ .material-icons{
+
+    padding-top: .20em;
+ }
+
+ .setting-container > span:not(.change){
+    display: inline-flex;
+    gap:  2em;
+    width: 80%;
+    margin-bottom: 2em;
+
+ }
+
+ .setting-container > span{
+   display: inline-flex;
+   width: 80%;
+   margin-bottom: 2em;
+ }
+
+ .change{
+   display: inline-flex;
+   flex-direction: column;
+ }
+
+
+ .setting-container > span >p, input{
+    color: var(--grey_color);
+    font-size: 14px;
+ }
+
+
+ input{
+    padding: .5em .5em;
+    width: 100%;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgb(222, 222, 222);
+ }
+
+ .buttons-container{
+    display: inline-flex;
+    justify-content: flex-end;
+    margin-top: 3em;
+
+
+ }
+
+ .buttons-container > button:first-child, button:nth-child(2){
+    background-color:var(--main_color);
+    color: white;
+
+ }
+
+ .buttons-container > button:first-child{
+    display: none;
+ }
+
+
+ .buttons-container > button:last-child{
+    background-color: white;
+
+ }
+
+ #cancel_but{
+  
+    background-color: white;
+ }
+
+ #back_but{
+    display: none;
+    background-color: white;
+ }
+ #back_but > a, #cancel_but > a{
+        text-decoration: none;    
+        color: black;
+        
+ }
+ button{
+    font: bold 12px Inter;
+    width: 20%;
+    border-radius: 5px;
+    border-width: 0;
+    height: 3em;
+ }
+
+
+ #p_confirm{
+    display: none;
+    text-align: center;
+    color: var(--red_color);
+    font: bold 12px Inter;
+   
+ }
+
+ #error_status{
+   margin: 1em 0 0 5em; 
+    color: var(--red_color);
+    font: bold 12px Inter;
+}
+
+ @media only screen and (max-width:500px ){
+
+
+    .container{
+        margin-left: 0em;
+    }
+    .setting-container{
+
+        width: 90%;
+    }
+
+}
+
+ @media only screen and (min-width:501px) and (max-width:768px){
+
+
+        .container{
+            margin-left: 12vw;
+        }
+        .setting-container{
+    
+            width: 80%;
+        }
+ }
+
+
+ @media only screen and (min-width:769px) and (max-width:800px){
+
+
+    .container{
+        margin-left: 12vw;
+    }
+    .setting-container{
+
+        width: 60%;
+    }
+
+}
+
+    @media only screen and (min-width:800px) and (max-width:1000px){
+
+
+        .container{
+            margin-left: 12vw;
+        }
+        .setting-container{
+    
+            width: 60%;
+        }
+}
